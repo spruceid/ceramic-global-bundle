@@ -5,10 +5,8 @@ import { TileDocument } from '@ceramicnetwork/stream-tile';
 import { DID } from 'dids';
 import KeyDidResolver from 'key-did-resolver';
 
-const CERAMIC_NODE_URL = 'https://ceramic-clay.3boxlabs.com';
-
-export const initializeClient = () => {
-  const ceramic = new CeramicClient(CERAMIC_NODE_URL);
+export const initializeClient = (nodeUrl) => {
+  const ceramic = new CeramicClient(nodeUrl);
   const resolver = {
     // ...KeyDidResolver.getResolver(),
     ...ThreeIdResolver.getResolver(ceramic)
